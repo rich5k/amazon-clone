@@ -1,0 +1,31 @@
+.order{
+    padding: 40px;
+    margin: 20px 0;
+    border: 1px solid lightgray;
+    background-color: white;
+    position: relative;
+}
+
+.order__id{
+    position: absolute;
+    top: 40px;
+    right: 20px;
+}
+
+.order__total{
+    font-weight: 600;
+    text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+    .order{
+      width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      /* padding-bottom: 10px; */
+      /* padding-top: 10px; */
+      flex-direction: column;
+      flex-basis: 1;
+    }
+  }
