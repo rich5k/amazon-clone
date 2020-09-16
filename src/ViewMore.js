@@ -1,5 +1,7 @@
 import React from 'react'
 import "./ViewMore.css"
+import {useStateValue} from "./StateProvider";
+import StarIcon from "@material-ui/icons/Star";
 function ViewMore({id,title,image,price,rating}) {
     const[{basket}, dispatch]= useStateValue();
    
