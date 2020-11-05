@@ -17,7 +17,7 @@ function Payment() {
     const elements = useElements();
 
     const [succeeded, setSucceeded]=useState(false);
-    const [processing, setProcessing]=useState(false);
+    const [processing, setProcessing]=useState("");
 
     const [error, setError]= useState(null);
     const [disabled, setDisabled]= useState(true);
@@ -55,8 +55,11 @@ function Payment() {
         }).then(({ paymentIntent}) =>{
             // paymentIntent = payment confirmation
 
-            db.collection('users').doc(user?.uid).collection('orders')
-            .doc(paymentIntent.id).set({
+            db.collection('users')
+            .doc(user?.uid)
+            .collection('orders')
+            .doc(paymentIntent.id)
+            .set({
                 basket: basket,
                 amount: paymentIntent.amount,
                 created: paymentIntent.created

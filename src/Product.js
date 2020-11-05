@@ -1,5 +1,7 @@
 import React from 'react';
 import "./Product.css";
+import ViewMore from "./ViewMore";
+import {Link} from "react-router-dom";
 import {useStateValue} from "./StateProvider";
 import StarIcon from "@material-ui/icons/Star";
 
@@ -18,6 +20,9 @@ function Product({id,title,image,price,rating}) {
                 rating: rating,
             }
         })
+    }
+    const viewMore= ()=>{
+        
     }
     return (
         <div className='product'>
@@ -39,7 +44,16 @@ function Product({id,title,image,price,rating}) {
 
             </div>
             <img  src={image} />
-            <button >View more</button>
+            {/* <Link to ='./viewMore'>
+                <button onClick={viewMore} >View more 
+                    <ViewMore 
+                        id= {id}
+                        title= {title}
+                        image={image}
+                        price={price}
+                        rating={rating}
+                /></button>
+                </Link> */}
             <button onClick={addToBasket}>Add to Basket</button>
         </div>
     )

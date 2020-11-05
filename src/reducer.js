@@ -19,7 +19,7 @@ export const initialState = {
       case "EMPTY_BASKET":
         return{
         ...state, 
-        basket: [...state.basket, action.item],
+        basket: [],
         };
         
       case "REMOVE_FROM_BASKET":
